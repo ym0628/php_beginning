@@ -194,8 +194,128 @@ https://info.winschool.jp/detail86/#Laravelとは
 - よく分からんけど、XAMPPは、まぁそんながっつり学ばなくても良さそうだぉ。
 
 
+
 ## <font color="Salmon">XAMPPの初期設定と初めてのPHPプログラミング</font>
 
+***2023/11/26***
+***動画37分25秒〜***
+
+
+- `PHPinfo`を開くと、PHPのバージョン情報や設定が確認できる。
+- 日付が`ドイツ・ベルリン`の時刻になってしまっているのでAsia/Tokyoに変更する
+- `/Applications/XAMPP/etc/php.ini`ファイルを開く。
+- VScodeで編集する
+
+```ini
+[Date]
+; Defines the default timezone used by the date functions
+; http://php.net/date.timezone
+date.timezone=Europe/Berlin
+```
+
+```diff_ini
+[Date]
+; Defines the default timezone used by the date functions
+; http://php.net/date.timezone
++ date.timezone=Asia/Tokyo
+```
+- これでApacheをストップさせて
+- 再起動すると、Asisa/Tokyoに更新される。
+
+
+***続いてMySQLを起動していく***
+
+- `MySQL Database`を`start`で起動させる
+-  `phpMyAdmin`ページを開く
+- まずはパスワードを設定する
+- ここはMySQL（MariaDB）を扱うページだ。
+- ページ上部タブ`ユーザーアカウント`メニューをクリック
+- `	root	localhost`という項目の`権限を編集をクリック`
+- `change password`（パスワードを変更する）という項目をクリック
+- 任意のパスワードを入力します。
+- `*******`
+- これで実行ボタンをクリックするとパスワードが更新される。
+- この状態で`phpMyAdmiin`をリロードすると、エラーが表示される。
+- パスワードを変更したことによるエラーである。
+- 続いてこれを解消する。
+- まずは、パス`/Applications/XAMPP/xamppfiles/phpmyadmin/config.inc.php`というファイルを開く。
+- 以下の行に、先ほどのパスワードを追記してあげる。
+- 権限者であることの警告がVScodeで出た場合は、承認して進める。
+
+```diff_php:XAMPP/xamppfiles/phpmyadmin/config.inc.php
+省略
+...
++ $cfg['Servers'][$i]['password'] = '*********';
+...
+省略
+```
+- これで`phpMyAdmin`をリロードをすれば、元通り管理画面が出てくるようになる。
+- これでOK。
+
+
+<hr>
+
+***初めてのPHPプログラミング(動画46分45秒〜)***
+
+- これは、別動画でやったのと同様。
+
+```php:test02.php
+<?php
+  echo "おはようございます！";
+  echo 'Hello World!';
+?>
+```
+- `http://localhost/test02.php`にブラウザでアクセス。
+- これでテキストが表示される。
+- これで、初めてのPHPプログラミング完了。
+
+<hr>
+
+***この動画で作っていく見本のアプリケーション***
+- シンプルなPostのアプリを作る。
+- `Ruby on Rails`で使った`scaffold`ライブラリで簡単に作れるあのやつ！
+- 基本的なCRUDアプリケーションを作っていく。
+
+
+
+
+## <font color="Salmon">PHPの書き方</font>
+
+***phpの特徴***
+- phpの書き方
+- echo文の書き方
+- シングルクォート、ダブルクォート
+- phpはWebアプリケーションの開発のために作られたWebアプリ開発特化型のスクリプト言語である。
+- 特徴として`<?php ?>`をhtmlに入れることで、html上でphpのプログラムを実行させることができる。
+- 実際にhtmlにphpを書き込むのは非推奨じゃないかなぁ、、、？
+- 半角スペースと改行は、単語の区切りという同じ意味を持つ。
+- `;`セミコロンは、文章の終わりを示す。
+- `''`シングルクォートや、`""`ダブルクォート→どちらも同じ`String`として扱われる。
+- この辺はhtmlやrubyのerbファイルと同じかな。
+
+
+***ポイント・注意点***
+
+:::note info
+半角スペースと改行は、単語の区切りという同じ意味を持つ。
+:::
+
+:::note warn
+・改行の数はいくつ入れても、1つとして扱われる。
+・全角スペースはエラーになるので注意
+:::
+
+:::note info
+`.php`ファイルの中に、<DOCTYPE!>を宣言し、htmlを記述することができる。
+これはおそらくRubyでいうところの`index.html.erb`みたいなものかなぁと思われる。
+:::
+
+- 総括すると、phpは最終的にhtmlとして表示する。
+- phpはWebアプリケーション開発に特化して作られたスクリプト言語である。
+
+## <font color="Salmon">PHPの変数について</font>
+
+
 
 
 
@@ -207,9 +327,12 @@ https://info.winschool.jp/detail86/#Laravelとは
 
 <br>
 
-### ***<font color="Green">✅ 次は動画00時間37分25秒〜</font>***
+### ***<font color="Green">✅ 次は動画01時間04分30秒〜</font>***
 
 <br>
+
+
+
 
 
 
