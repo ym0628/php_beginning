@@ -313,24 +313,97 @@ date.timezone=Europe/Berlin
 - 総括すると、phpは最終的にhtmlとして表示する。
 - phpはWebアプリケーション開発に特化して作られたスクリプト言語である。
 
+***2023/11/27***
+
 ## <font color="Salmon">PHPの変数について</font>
 
+- `chapter2`ディレクトリ作成
+- そこに`1-2.php`ファイル作成
+- 簡単なhtmlを作成していく
+- `!`でtubキー、
+- もしくは`html:5`でエンター
+- bodyタグに`<?php?>`を実装
+- 適当に`echo`する。
+- VScodeにはオートセーブ機能を付けられる。（任意）
+- 保存したらローカルホストサーバーを確認。
+- ブラウザで`localhost/chapter2/1-2.php`にアクセス。
+- echoが反映されている事を確認。
+- さらにh1タグも入れてみる。
+- `<?php echo '<h1>テキスト</h1>' ?>`
+- こんな感じにできる！
+- 確認できたら、このコードはもう使わないので、消すかコメントアウトしてOK。
+- 続いて、適当に変数を定義し、適当にstringを入力する。
+
+```php
+<?php
+  $name = '<h1>Hello World!</h1>';
+  echo $name;
+?>
+```
 
 
+:::note info
+なぜ`localhost/...`というパスなのか？
+これは`Apache`の設定によるものである！
+知らなかった、、、💦
+なお、Apacheは`Mac OS X`だとプリインストールされている模様。
+つまり、Macの場合、`XAMPP`をわざわざ導入しなくても良い。
+:::
 
+:::note info
+- なお、echoとprintは意味はほぼ同じ。
+- だが、微妙に挙動が違う。
+- 初心者の段階では気にしなくて良いらしい。
+- `echo '<br/>';`または`echo '<br>';`で改行を挿入できる。
+- シングルorダブルクォートで囲ってあげないとダメなので注意。
+:::
 
+:::note info
+- プログラムは上から順番に実行される。
+- これは基本だけど、重要。
+:::
 
+ここまでのコード
+```php:htdocs/chapter2/1-2.php
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>php_beginning</title>
+    </head>
+    <body>
+      <?php
+        $name = '<h1>Hello World!</h1>';
+        echo $name;
+        echo '<br>';
+        echo $name;
+        echo "<br/>";
+        echo $name;
+        // コメント
+      ?>
+    </body>
+  </html>
+```
 
+ローカルホストで確認すると、このように画面に反映された。
 
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3486945/21726b91-36b5-acd6-0d95-6ef38e8fc5be.jpeg" alt="Chapter2の実装後の画面" width=50% height=50%>
 
+Chapter2はここまで。
+
+<hr>
+
+***2023/11/28***
+
+## <font color="Salmon">PHPのデータ型（整数型）について</font>
 
 
 <br>
 
-### ***<font color="Green">✅ 次は動画01時間04分30秒〜</font>***
+### ***<font color="Green">✅ 次は動画01時間17分50秒〜</font>***
 
 <br>
-
 
 
 
