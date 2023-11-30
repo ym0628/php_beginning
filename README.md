@@ -313,6 +313,7 @@ date.timezone=Europe/Berlin
 - 総括すると、phpは最終的にhtmlとして表示する。
 - phpはWebアプリケーション開発に特化して作られたスクリプト言語である。
 
+
 ***2023/11/27***
 
 ## <font color="Salmon">PHPの変数について</font>
@@ -398,14 +399,59 @@ Chapter2はここまで。
 
 ## <font color="Salmon">PHPのデータ型（整数型）について</font>
 
+- `chapter3`ディレクトリを作成
+- `1-3.php`ファイルを作成
+- 例に倣って`html`ファイルを生成
+- （`html:5`または`!`でhtml基本のコードを自動生成）
+- `<body>`タグ内に`<?php?>`タグを入れる
+- 適当に変数を定義し、`string`を代入する。
+- 変数を`echo`する
+- 一旦、localhostでブラウザを確認。
+- `http://localhost/chapter3/1-3.php`
+- ここから新しい内容
+- `echo 10;`とすると、データ型の`10`が出力される。
+- `echo '10';`はString型なので注意。
+- データ型の種類、integerなのかstringなのかを理解する。
+
+```php
+<body>
+  <?php
+    $name = 'Hello!';
+    echo $name;
+    echo '<br>';
+
+    $number = 10 + 10;
+    echo $number;
+    echo '<br>';
+
+    $string = '10 + 10';
+    echo $string;
+    echo '<br>';
+  ?>
+</body>
+```
+
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3486945/d745bbd2-dbdc-878d-e5dd-ed0400ba6262.jpeg" alt="integer型とstring型の違いの結果" width=50% height=50%>
+
+chpater3はここまで。
+
+<hr>
+
+***2023/12/01***
+
+## <font color="Salmon">PHPの基本データ型について</font>
+
+
+
+
+
+
 
 <br>
 
-### ***<font color="Green">✅ 次は動画01時間17分50秒〜</font>***
+### ***<font color="Green">✅ 次は動画01時間28分22秒〜</font>***
 
 <br>
-
-
 
 
 
