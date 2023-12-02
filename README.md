@@ -515,12 +515,123 @@ $結婚相手の希望 = ! ブサイク;
 論理型 `bool型`
 ```
 
+***2023/12/03***
+
+## <font color="Salmon">PHPのNULL型とキャスト演算</font>
+
+- 前回は基本データ型4つを覚えた。
+- 今回はNULL型を学ぶ
+- さらにキャスト演算も学ぶ
+
+
+    // データ型：NULL型とキャスト演算について学ぶ
+    // $x = NULL;
+    // booleanなどの真偽値やNULLなどは大文字で書くのが慣例となっている。
+    // NULLとは「無」を表すためのデータ型である。
+    // 変数名には日本語も使えるものの、実用上、ほぼ英語しか使用しないので注意。
+    // $Saturday_job = TRUE;
+    // $Saturday_job_yes_or_no = TRUE or FALSE;
+    // $Saturday_job_yes_or_no = "そもそも仕事してない"; = NULL;
+    // このような真偽値ではない第三の選択肢を表すことなどに使う。
+    // LINE ID教えて = いいよ=TRUE, いやだ=FALSE, ID持ってない=NULL;
+    // PHPのデータ型は全部で10個ある。そのうちここまで5個覚えたましたね。
+    // キャスト演算は単項演算
+    // キャストとは型変換のことを指す。
+    // ドル => 円, グラム => キロ, など
+
+    // 重要な構文 var_dump;（正確には関数）
+    var_dump(1);
+    echo '<br>';
+    // => int(1)
+    // この構文はecho同様、出力するメソッドである。
+    // 値と値のデータ型をセットで出力するというメソッドである。
+    // htmlで表現する時には使わないが、上記の通り詳細な情報を教えてくれるので、デバッグの時によく使うらしい。
+
+```php
+    var_dump(1);
+    echo '<br>';
+    var_dump('1');
+```
+
+- 出力結果はこうなる。
+- デバッグの際、数値とStringの違いがあることが、このメソッドを使うと分かる。
+
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3486945/7c42943e-f9be-81e2-763e-13a903aa50e1.jpeg" alt="var_dumpの出力例画像" width=50% height=50%>
+
+- また、`var_dump`は変数に対しても使うことができる。
+
+```php
+    $x = TRUE;
+    var_dump($x);
+    // 出力結果 => bool(true)
+```
+
+:::note info
+- 用途としては、コードが肥大化した時、`変数`が何に対して付けられているか分からなくなることがあるので、そんな時に`var_dump`をよく使用する。
+:::
+
+
+***続いてはキャスト演算について***
+
+```php
+    $to_s = (string) 10;
+    var_dump($to_s);
+    echo '<br>';
+
+    $to_i = (int) '10';
+    var_dump($to_i);
+    echo '<br>';
+```
+
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3486945/a2e5f365-a6bc-6160-5748-a58d411032c9.jpeg" alt="var_dumpを応用した変換事例" width=50% height=50%>
+
+- `string(2)`の`2`というのは、文字列の文字数を表している。
+
+:::note info
+- このように、`( )`の中のデータ型に変換するという`var_dump`の使い方の応用。
+- すべての変換規則を覚える必要はない。複雑すぎるので。
+:::
+
+
+***PHPの暗黙の型変換***
+
+```php
+    // phpの暗黙の型変換
+    $xx =  '10' + '10';
+    echo $xx;
+    echo '<br>';
+    var_dump($xx);
+    echo '<br>';
+```
+
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3486945/4be5b377-ac2e-c19d-5480-9888af5c6eb8.jpeg" alt="php暗黙の型変換の事例" width=50% height=50%>
+
+- 無理やりcastキャストしてくれる。
+- こういうのを`弱い型付けの言語`と呼ぶ。
+- 逆に勝手に型変換してくれない言語を`強い型付けの言語`と呼ぶ
+- `JavaScript`も暗黙の型変換してくれる弱い型付けと呼ばれるらしい。
+- 確か、`Ruby`は勝手に型変換してくれなかった気がする、、、
+- 本来は、'' で囲っているので、Stringであるため、'1010'となるはずだが、phpは暗黙的に数値として判断してくれ、よしなに取り計らってくれるようだ。
+
+:::note alert
+- 優しい反面、バグの温床にもなっているので注意。
+- 何よりも正しいデータ型でプログラミングすることが重要である。
+:::
+
+<br>
+<hr>
+
+## <font color="Salmon">PHPの if文 と else文 について</font>
+
+
+
+
 
 
 
 <br>
 
-### ***<font color="Green">✅ 次は動画01時間42分16秒〜</font>***
+### ***<font color="Green">✅ 次は動画01時間58分02秒〜</font>***
 
 <br>
 
