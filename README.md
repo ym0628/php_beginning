@@ -834,7 +834,81 @@ else文については、ここまで
 
 ## <font color="Salmon">PHPの連想配列について（その1）</font>
 
+- コンピュータは2進数でしか理解できない。
+- それを理解できるようにするために`型`が存在する。
+- phpではデータ型は`基本型`、`スカラ型`、`複合型`の3種類で呼ばれる。
+- `基本型`はそれ以上、分割できない型を指す。
 
+
+```php
+    $array = [
+        'fruits' => 'apple'
+    ];
+    echo $array; // => Array
+    echo '<br>'; // 改行
+    var_dump($array) // => array(1) { ["fruits"]=> string(5) "apple" }
+```
+
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3486945/368dff3d-7111-7bf6-2348-b7552ec4b643.jpeg" alt="" width=50% height=50%>
+
+
+
+- 複数の値も代入できる。
+- その際は、`,`カンマで区切って改行する。
+
+```php
+    $array = [
+        'fruits' => 'apple',
+        'fruits' => 'orange',
+        'drink' => 'coffee',
+        'fruits' => 'banana',
+        'drink' => 'green tea',
+    ];
+    echo $array;
+    echo '<br>';
+    var_dump($array)
+```
+
+- これを出力してみると、、、
+
+```terminal
+>>> var_dump($array)
+
+array(2) { ["fruits"]=> string(6) "banana" ["drink"]=> string(9) "green tea" }
+
+```
+
+- array(2)の`2`は、キーの数を指している。
+- 出力されるのは対応するキーの最後尾のレコードの`value`
+- この連想配列では、`fruits`キーのレコードの最終である`banana`というvalueが出力された。
+- また、`drink`キーでは、最終である`green tea`というvalueが出力された。
+
+```php
+    $array['food'] = 'yakitori';
+    echo $array['food'];
+    echo '<br>';
+    var_dump($array);
+    echo '<br>';
+```
+
+- 以下のように出力される。
+
+```terminal
+yakitori
+array(3) { ["fruit"]=> string(6) "banana" ["drink"]=> string(9) "green tea" ["food"]=> string(8) "yakitori" }
+```
+
+- 上記のように、keyとvalueは追加することもできる。
+- また、変数に対してキーを指定してあげると、その中身のvalueのレコードを取得できる。
+
+
+<br>
+<hr>
+
+
+***2023/12/06***
+
+## <font color="Salmon">PHPの連想配列について（その1）</font>
 
 
 
@@ -842,7 +916,7 @@ else文については、ここまで
 
 <br>
 
-### ***<font color="Green">✅ 次は動画02時間22分22秒〜</font>***
+### ***<font color="Green">✅ 次は動画02時間30分55秒〜</font>***
 
 <br>
 
