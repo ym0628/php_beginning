@@ -26,6 +26,7 @@ https://hnavi.co.jp/knowledge/blog/xampp/
 
 https://info.winschool.jp/detail86/#Laravelとは
 
+https://www.php.net/manual/ja/funcref.php
 
 
 <hr>
@@ -1380,6 +1381,55 @@ grapeの数は2個です。
 
 ## <font color="Salmon">PHPの関数について</font>
 
+- 関数とは、inputしてfuncitionで処理を実行し、その結果をoutputするという一連の流れをプログラムしたもの。
+- 出力結果は変数に代入され、他の場所から呼び出せたりする。
+- 数学の関数に由来する。
+- `Y = 2X + 1`という1次関数は、Xの値によって結果Yが異なる。
+- これと同様に、PHPにおける関数も考えることができる。
+
+
+:::note info
+PHPの関数は主に2種類ある。
+・`ビルトイン関数` ：元々phpに定義づけられている関数
+・`ユーザー定義関数` ：ユーザーが自由に定義づけることができる関数
+である。
+:::
+
+***ビルトイン関数の例***
+
+```php
+<?php
+    // ビルトイン関数の例1
+    $array = [1, 2, 3];
+    $x = count($array);
+    echo $x;
+    // => 3 (配列の要素の数をカウントしてくれる関数count)
+    
+    // ビルトイン関数の例2
+    $z = -10;
+    $absolute_number = abs($z);
+    echo $absolute_number;
+    // => 10 (値の絶対値を返してくれる関数abs -10の絶対値は10である => absolute numberの略称)
+?>
+```
+
+- 他にもいろんなビルトイン関数がある。
+- 詳しくは公式ドキュメントを確認する。
+- https://www.php.net/manual/ja/funcref.php
+
+<hr>
+
+
+***ユーザー定義関数の例***
+
+```php
+
+```
+
+
+
+
+
 
 
 
@@ -1389,7 +1439,7 @@ grapeの数は2個です。
 
 <br>
 
-### ***<font color="Green">✅ 次は動画03時間11分25秒〜</font>***
+### ***<font color="Green">✅ 次は動画03時間17分28秒〜</font>***
 
 <br>
 
